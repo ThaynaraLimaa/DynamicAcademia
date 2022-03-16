@@ -1,0 +1,295 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --cor0: #a6a6a6;
+    --cor1: #737373;
+    --cor2: #404040;
+    --cor3: #262626;
+
+    --font-principal: font-family: 'Roboto', sans-serif;
+    --font-secundaria: font-family: 'Courier Prime', monospace;
+    --font-logo: font-family: 'Bebas Neue', cursive;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Cabeçalho */
+
+header { /*elemento pai*/
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /*desabilita a possibilidade do cabaçalho passar da janela gerando uma barra de rolagem horizontal */ 
+    position: relative;
+}
+
+.img-wrapper { /* div que contem a imagem */
+    width: 100%; /*Diz que vai oculpar 100% da largura e altura do header que é onde  a imagem esta */
+    height: 100%;
+    overflow: hidden;
+}
+.img-wrapper img { /*Deixar a img respeitando a altura e largura do elemento pai, img-wraper */
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /*faz com que a imagem crubra e ela não destroce*/
+    opacity: 0.8;
+}
+
+nav {
+    background-image: linear-gradient(to right, var(--cor2), var(--cor3));
+    width: 100%;
+    height: 2em;
+    position: absolute;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.1em;
+}
+
+nav > h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.7em;
+    color: #fff;
+}
+
+nav > ul {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+}
+
+nav li {
+    display: flex;
+}
+
+nav a {
+    color: #fff;
+    font-family: 'Courier Prime', monospace;
+    padding: 5px;
+}
+
+nav a:hover {
+    background-color: var(--cor0);
+    color: #000;
+    text-decoration: underline;
+    border-radius: 5px;
+}
+
+.banner {
+    position: absolute;
+    top: 45%;
+    left: 10%
+}
+
+.banner > h1{
+    font-family: 'Courier Prime', monospace;
+    font-size: 3em;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+.banner > p {
+    width: 20em;
+    color: #cecece;
+}
+
+/* conteúdo */
+main {
+    margin: auto;
+}
+
+.sessao-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.5em;
+    
+}
+
+.sessao-header h1 {
+    font-family: 'Courier Prime', monospace;
+    color: #000;
+    align-items: center;
+    margin-top: 1em;
+    border-bottom: solid 2px var(--cor3);
+}
+
+/* Cards de aula */ 
+
+.sessao-aulas {
+    margin: 2.5em 0;
+}
+
+.aulas {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 14em;
+    height: 20em;
+    position: relative;
+    margin-bottom: 1.5em;
+} 
+
+.img-aulas {
+    background-color: #262626;
+    height: 100%;
+    width: 100%;
+    border-radius: .5em;
+}
+
+.img-aulas img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: .5em;
+    opacity: .8;
+}
+
+.card-info {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: .8em;
+    padding: 1em;
+    color: #fff;
+    transition: all .7s;
+}
+
+.card-info h2 {
+    font-family: 'Courier Prime', monospace;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+.botoes-card {
+    background-color: var(--cor1);
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor1); 
+    margin-top: 1em;
+    color: #fff;
+    width: 7em;
+    height: auto;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: .3em;
+    transition: background-color .5s;
+}
+
+.card:hover .card-info { /*Quando passar o mouse no car o card-info vai receber essas propriedades. */
+    opacity: 1;
+    visibility: visible;
+}
+
+.botoes-card:hover {
+    background-color: var(--cor0);
+}
+
+/* Sobre */
+
+.sobre {
+    background-color: black;
+    color: #fff;
+    display: flex;
+    width: 100%;
+    height: 27em;
+    margin-bottom: 2em;
+    text-indent: 1em;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.sobre-conteudo {
+    position: absolute;
+    width: 48em;
+    left: 3em;
+}
+
+.sobre-conteudo h1 {
+    margin-bottom: 2em;
+}
+
+.img-sobre {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0));
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+}
+
+.img-sobre img {
+    height: 100%;
+    opacity: .5;
+    object-fit: cover;
+}
+
+/* Informações de contato*/
+
+.sessao-informacoes {
+    background-color: var(--cor3);
+    color: #fff;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    gap: 1em;
+}
+
+.sessao-informacoes h1 {
+    font-family: 'Courier Prime', monospace;
+    border-bottom: solid 3px #fff;
+}
+
+.informacoes {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+/* Footer */
+
+footer {
+    background-color: #000;
+    color: #fff;
+    height: auto;
+    text-align: center;
+    padding: 1em;
+}
+
+footer a {
+    color: #fff;
+}
+
+.redes {
+    display: flex;
+    align-items: center;
+    margin: .8em;
+    justify-content: center;
+    gap: 1em;
+}
+.redes i {
+    padding: .5em;
+}
+
+footer a:hover {
+    color: var(--cor0);
+    text-decoration: underline;
+}

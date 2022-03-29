@@ -355,6 +355,7 @@ footer a:hover {
         justify-content: space-between;
     
         cursor: pointer;
+        transition: all .3s;
     }
     .line {
         background-color: #fff;
@@ -363,6 +364,19 @@ footer a:hover {
         box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
     
         z-index: 10;
+    }
+    .show-menu .hamburguer {
+        right: 16em;
+    }
+    .show-menu #line1 {
+        transform: rotate(45deg) translate(0em, 1.2em);
+    }
+    .show-menu #line2 {
+        opacity: 0;
+        visibility: hidden;
+    }
+    .show-menu #line3 {
+        transform: rotate(-45deg) translate(-.3em, -.9em);
     }
     
     .show-menu .menu-lateral {
@@ -379,7 +393,7 @@ footer a:hover {
         flex-direction: column;
         align-items: center;
 
-        transition: all .5s;
+        transition: all .4s;
     }
     
     .show-menu .menu-lateral h1 {

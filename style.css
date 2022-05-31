@@ -14,14 +14,14 @@
     --cor2: #404040;
     --cor3: #262626;
 
-    --font-principal: font-family: 'Roboto', sans-serif;
-    --font-secundaria: font-family: 'Courier Prime', monospace;
-    --font-logo: font-family: 'Bebas Neue', cursive;
+    --font-principal: 'Roboto', sans-serif;
+    --font-secundaria: 'Courier Prime', monospace;
+    --font-logo: 'Bebas Neue', cursive;
 }
 
 body {
     background-color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-principal)
 }
 
 body::-webkit-scrollbar {
@@ -69,7 +69,7 @@ nav {
 }
 
 nav > h1 {
-    font-family: 'Bebas Neue', cursive;
+    font-family: var(--font-logo);
     font-size: 1.7em;
     color: #fff;
 }
@@ -86,7 +86,7 @@ nav li {
 
 nav a {
     color: #fff;
-    font-family: 'Courier Prime', monospace;
+    font-family: var(--font-secundaria);
     padding: 5px;
 }
 
@@ -109,7 +109,7 @@ nav .nav-secundaria {
 }
 
 .banner > h1{
-    font-family: 'Courier Prime', monospace;
+    font-family: var(--font-secundaria);
     font-size: 3em;
     font-weight: 700;
     color: #fff;
@@ -138,7 +138,7 @@ main {
 }
 
 .sessao-header h1 {
-    font-family: 'Courier Prime', monospace;
+    font-family: var(--font-secundaria);
     color: #000;
     align-items: center;
     margin-top: 1em;
@@ -190,13 +190,13 @@ main {
 }
 
 .card-info h2 {
-    font-family: 'Courier Prime', monospace;
+    font-family: var(--font-secundaria);
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
 }
 
 .botoes-card {
     background-color: var(--cor1);
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-principal);
     background-color: var(--cor1); 
     margin-top: 1em;
     color: #fff;
@@ -269,16 +269,22 @@ main {
 }
 
 .sessao-informacoes h1 {
-    font-family: 'Courier Prime', monospace;
+    font-family: var(--font-secundaria);
     border-bottom: solid 3px #fff;
+}
+
+.informacoes-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
 }
 
 .informacoes {
     display: flex;
-    align-items: center;
-    gap: 2em;
+    gap: 1.5em;
 }
-
 /* Footer */
 
 footer {
@@ -338,10 +344,11 @@ footer a:hover {
     }
 }
 
-@media (max-width: 660px) {
+@media (max-width: 670px) {
     nav {
         display: none;
     }
+    /* configurações menu */
     .hamburguer {
         width: 1.5em;
         height: 1.4em;
@@ -405,7 +412,7 @@ footer a:hover {
     }
     
     .show-menu .menu-lateral ul {
-        font-family: 'Courier Prime', monospace;
+        font-family: var(--font-secundaria);
     
         position: relative;
         top: 5em;
@@ -422,5 +429,11 @@ footer a:hover {
     .show-menu .menu-lateral a:hover {
         color: var(--cor0);
         text-decoration: underline;
+    }
+
+    /* Configurações horarios */
+    .informacoes{
+        flex-direction: column;
+        gap: .3em;
     }
 }
